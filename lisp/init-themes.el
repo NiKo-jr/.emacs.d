@@ -2,8 +2,7 @@
 (require-package 'color-theme-sanityinc-tomorrow)
 
 ;; If you don't customize it, this is the theme you get.
-(setq-default custom-enabled-themes '(sanityinc-solarized-dark))
-;(setq-default custom-enabled-themes '(sanityinc-tomorrow-bright))
+(setq-default custom-enabled-themes '(sanityinc-tomorrow-bright))
 
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
@@ -31,6 +30,11 @@
   (setq custom-enabled-themes '(sanityinc-tomorrow-bright))
   (reapply-themes))
 
-(maybe-require-package 'dimmer)
+
+(use-package dimmer
+  :init
+  (setq-default dimmer-fraction 0.1)
+  :config
+  (add-hook 'after-init-hook 'dimmer-mode))
 
 (provide 'init-themes)

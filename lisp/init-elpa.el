@@ -78,7 +78,8 @@ locate PACKAGE."
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-
+(when (maybe-require-package 'use-package)
+  (require 'use-package))
 
 (require-package 'fullframe)
 (fullframe list-packages quit-window)

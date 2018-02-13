@@ -3,3 +3,17 @@
 \#*
 /elpa
 /elpa-*
+.emacs.desktop
+.historian
+.session
+.smex-items
+.uptimes.el
+anaconda-mode/
+custom.el
+ditaa0_9.jar
+history
+org-clock-save.el
+plantuml.jar
+projectile-bookmarks.eld
+projectile.cache
+recentf
