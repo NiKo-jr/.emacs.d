@@ -200,10 +200,12 @@
 ;;----------------------------------------------------------------------------
 ;; Page break lines
 ;;----------------------------------------------------------------------------
-(when (maybe-require-package 'page-break-lines)
+(use-package page-break-lines
+  :ensure t
+  :config
   (add-hook 'after-init-hook 'global-page-break-lines-mode)
-  (after-load 'page-break-lines
-    (diminish 'page-break-lines-mode)))
+  (diminish 'page-break-lines-mode)
+  )
 
 
 ;;----------------------------------------------------------------------------
