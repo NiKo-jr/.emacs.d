@@ -32,6 +32,8 @@
 
 
 (use-package dimmer
+  :ensure
+  t
   :init
   (setq-default dimmer-fraction 0.1)
   :config
