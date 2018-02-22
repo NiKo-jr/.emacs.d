@@ -3,16 +3,13 @@
                 ("SConscript\\'" . python-mode))
               auto-mode-alist))
 
-(require-package 'pip-requirements)
+(use-package pip-requirements
+  :ensure t)
 
-(when (maybe-require-package 'anaconda-mode)
-  (after-load 'python
-    (add-hook 'python-mode-hook 'anaconda-mode)
-    (add-hook 'python-mode-hook 'anaconda-eldoc-mode))
-  (when (maybe-require-package 'company-anaconda)
-    (after-load 'company
-      (add-hook 'python-mode-hook
-                (lambda () (sanityinc/local-push-company-backend 'company-anaconda))))))
+(use-package company-jedi
+  :ensure t
+  :init
+  (add-hook 'python-mode-hook (lambda () (add-to-list 'company-backends 'company-jedi))))
 
 
 (provide 'init-python)
