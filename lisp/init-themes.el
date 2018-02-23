@@ -1,8 +1,9 @@
 (require-package 'color-theme-sanityinc-solarized)
 (require-package 'color-theme-sanityinc-tomorrow)
+(require-package 'dracula-theme)
 
 ;; If you don't customize it, this is the theme you get.
-(setq-default custom-enabled-themes '(sanityinc-tomorrow-bright))
+(setq-default custom-enabled-themes 'dracula)
 
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
@@ -12,7 +13,7 @@
       (load-theme theme)))
   (custom-set-variables `(custom-enabled-themes (quote ,custom-enabled-themes))))
 
-(add-hook 'after-init-hook 'reapply-themes)
+(add-hook 'after-init-hook (lambda () (load-theme 'dracula)))
 
 
 ;;----------------------------------------------------------
@@ -38,5 +39,19 @@
   (setq-default dimmer-fraction 0.1)
   :config
   (add-hook 'after-init-hook 'dimmer-mode))
+
+
+;;--------------------------------------------
+;; powerline
+;;--------------------------------------------
+(use-package powerline
+  :ensure t
+  :config
+  (use-package spaceline
+    :ensure t
+    :config
+    (require 'spaceline-config)
+    (spaceline-spacemacs-theme)))
+
 
 (provide 'init-themes)
