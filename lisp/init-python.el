@@ -11,5 +11,14 @@
   :init
   (add-hook 'python-mode-hook (lambda () (add-to-list 'company-backends 'company-jedi))))
 
+(use-package elpy
+  :ensure t
+  :config
+  (elpy-enable)
+  (use-package yasnippet
+    :ensure t
+    :config
+    (yas-global-mode 1)))
+
 
 (provide 'init-python)

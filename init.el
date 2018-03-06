@@ -64,7 +64,8 @@
 
 (require 'init-recentf)
 (require 'init-smex)
-(require 'init-ivy)
+;;(require 'init-ivy)
+(require 'init-helm)
 (require 'init-hippie-expand)
 (require 'init-company)
 (require 'init-windows)

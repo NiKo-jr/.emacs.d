@@ -44,14 +44,7 @@
 ;;--------------------------------------------
 ;; powerline
 ;;--------------------------------------------
-(use-package powerline
-  :ensure t
-  :config
-  (use-package spaceline
-    :ensure t
-    :config
-    (require 'spaceline-config)
-    (spaceline-spacemacs-theme)))
+
 
 
 (provide 'init-themes)
